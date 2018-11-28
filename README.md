@@ -16,15 +16,17 @@ Download either the minified or non-minified version, and include it in your htm
 
 ### Usage
 
-Wherever in your html body area, put the following code:
-
-    var slideshow = new Slideshow({
-        tickInterval: 5000, 
-        transitionTime: 800,
-        backgroundElementId: "background"
-    });
-    slideshow.setImages(['img/slideshow/001.jpg', 'img/slideshow/002.jpg']);
-    slideshow.run();
+Put the following code anywhere within your page's `<body>` area:
+    
+    <script>
+        var slideshow = new Slideshow({
+            tickInterval: 5000, 
+            transitionTime: 800,
+            backgroundElementId: "background"
+        });
+        slideshow.setImages(['img/slideshow/001.jpg', 'img/slideshow/002.jpg']);
+        slideshow.run();
+    </script>
 
 The interval and transition times are in miliseconds. All the config parameters are optional. You will however likely need to specify at least the html element id.
 
