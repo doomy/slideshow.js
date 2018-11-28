@@ -30,5 +30,5 @@ Put the following code anywhere within your page's `<body>` area:
 
 The interval and transition times are in miliseconds. All the config parameters are optional. You will however likely need to specify at least the html element id.
 
-##License
+## License
 I don't care. Use it at will. 
