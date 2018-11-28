@@ -14,7 +14,7 @@ Download either the minified or non-minified version, and include it in your htm
     <script src="js/slideshow.min.js" type="text/javascript"></script>
 
 
-###Usage
+### Usage
 
 Wherever in your html body area, put the following code:
 
