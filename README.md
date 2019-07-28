@@ -1,6 +1,6 @@
 # slideshow.js
 
-A simple javascript library to cycle background images of any element with crossfading effect. 
+A simple javascript library to cycle background images of any element with various effects. 
 
 ## Prerequisites
 
