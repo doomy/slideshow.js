@@ -22,13 +22,17 @@ Put the following code anywhere within your page's `<body>` area:
         var slideshow = new Slideshow({
             tickInterval: 5000, 
             transitionTime: 800,
-            backgroundElementId: "background"
+            backgroundElementId: "background",
+            effect: "fadeInOut"
         });
         slideshow.setImages(['img/slideshow/001.jpg', 'img/slideshow/002.jpg']);
         slideshow.run();
     </script>
 
-The interval and transition times are in miliseconds. All the config parameters are optional. You will however likely need to specify at least the html element id.
+The interval and transition times are in miliseconds. 
+
+All the config parameters are optional. If no custom backgroundElementId is provided, "background" is expected.
+Effect configuration options are: fadeInOut, slideHorizontal
 
 ## License
 I don't care. Use it at will. 
