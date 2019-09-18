@@ -31,7 +31,6 @@ var Slideshow = function(customConfig) {
     function init() {
         url = images[index];
         $('#'+config.backgroundElementId).css('background-image', "url("+url+")");
-        index++;
     }
 
     function setupConfig(customConfig) {
@@ -65,8 +64,10 @@ var Slideshow = function(customConfig) {
                 });
                 return;
             case EFFECT_SLIDE_HORIZONTAL:
-                $(selector).append($("<div id='temporaryBg' style='background-image:url("+url+"); width: 0; height: 100%'></div>"));
-                $("#temporaryBg").animate({width:"100%"}, config.transitionTime, function () {
+                var origWidth = $(selector).width();
+                var origHeight = $(selector).height()
+                $(selector).append($("<div id='temporaryBg' style='background-image:url("+url+"); width:"+ origWidth + "px; height: " + origHeight + "px; left: "+  (0-origWidth) + "px'></div>"));
+                $("#temporaryBg").animate({left:0}, config.transitionTime, function () {
                     $(selector).css('background-image', "url("+url+")");
                     $("#temporaryBg").remove();
                 });
