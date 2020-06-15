@@ -67,9 +67,14 @@ var Slideshow = function(customConfig) {
                 var origWidth = $(selector).width();
                 var origHeight = $(selector).height();
                 var origBackgroundSize = $(selector).css('background-size');
-                $(selector).append($("<div id='temporaryBg' style='position:absolute; background-image:url("+url+"); width:"+ origWidth + "px; height: " + origHeight + "px; left: "+  (0-origWidth) + "px;background-size:" + origBackgroundSize +"'></div>"));
+
+                $(selector).append($("<div id='temporaryBgMask' style='position:absolute; width:"+ origWidth + "px; height: " + origHeight + "px; left: 0;'></div>"));
+                $("#temporaryBgMask").append($("<div id='tbmRel' style='overflow: hidden; width: 100%; height: 100%; position: relative;' />"))
+                $("#tbmRel").append($("<div id='temporaryBg' style='position:absolute; background-image:url("+url+"); width:"+ origWidth + "px; height: " + origHeight + "px; left: "+  (0-origWidth) + "px;background-size:" + origBackgroundSize +"'></div>"));
                 $("#temporaryBg").animate({left:0}, config.transitionTime, function () {
                     $(selector).css('background-image', "url("+url+")");
+                    $("#temporaryBgMask").remove();
+                    $("#tbmRel").remove();
                     $("#temporaryBg").remove();
                 });
         }
