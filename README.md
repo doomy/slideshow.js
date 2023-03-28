@@ -10,24 +10,27 @@ A simple javascript library to cycle background images of any element with vario
 ## Getting Started
 
 Download either the minified or non-minified version, and include it in your html page's `<head>` area:
-
+```html
     <script src="js/slideshow.min.js" type="text/javascript"></script>
+```
 
 
 ### Usage
 
 Put the following code anywhere within your page's `<body>` area:
-    
+```javascript
     <script>
         var slideshow = new Slideshow({
             tickInterval: 5000, 
             transitionTime: 800,
             backgroundElementId: "background",
-            effect: "fadeInOut"
+            effect: "fadeInOut",
+            onTransition: function(imageUrl) { /* transition callback */ }
         });
         slideshow.setImages(['img/slideshow/001.jpg', 'img/slideshow/002.jpg']);
         slideshow.run();
-    </script>
+    </script> 
+```
 
 The interval and transition times are in miliseconds. 
 

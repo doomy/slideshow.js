@@ -51,6 +51,10 @@ var Slideshow = function(customConfig) {
         if (customConfig.effect) {
             config.effect = customConfig.effect;
         }
+
+        if (customConfig.onTransition) {
+            config.onTransition = customConfig.onTransition;
+        }
     }
 
     function switchImage() {
@@ -84,6 +88,9 @@ var Slideshow = function(customConfig) {
                     $('#' + temporaryBgMaskContainerId).remove();
                     $('#' + temporaryBgId).remove();
                 });
+        }
+        if (config.onTransition) {
+            config.onTransition(url);
         }
     }
 };
